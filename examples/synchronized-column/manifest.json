@@ -1,0 +1,19 @@
+{
+    "id": "addon-example",
+    "name": "Addon example",
+    "author": "RWS",
+    "description": "Addon example for Tridion Experience Space",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "extension-example",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\extension-example\\main.js",
+                "files": ["dist\\extension-example\\main.js", "dist\\extension-example\\main.css"]
+            }
+        }
+    ]
+}
