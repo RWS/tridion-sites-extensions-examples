@@ -1,48 +1,49 @@
-#!/bin/groovy
-
 pipeline {
     options {
-        buildDiscarder(logRotator(numToKeepStr: "5"))
-        durabilityHint("PERFORMANCE_OPTIMIZED")
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+        durabilityHint('PERFORMANCE_OPTIMIZED')
         disableConcurrentBuilds()
-        timeout(time: 1, unit: "HOURS")
+        timeout(time: 1, unit: 'HOURS')
     }
 
     agent {
         dockerfile {
-            label "docker-windows"
-            filename "WindowsAgentDockerfile"
+            label 'docker-linux'
+            filename 'Dockerfile'
         }
     }
 
     parameters {
-        booleanParam(name: "DeployToGitHub", description: "", defaultValue: false)
+        booleanParam(name: 'DeployToGitHub', description: '', defaultValue: false)
     }
 
     stages {
-        stage("Install") {
+        stage('Install') {
             steps {
-                bat "yarn install --immutable"
+                sh 'yarn install --immutable'
             }
         }
-        stage("Build") {
+
+        stage('Build') {
             steps {
-                bat "yarn build:all"
+                sh 'yarn run build:all'
             }
         }
-        stage("Deploy to GitHub") {
+
+        stage('Deploy to GitHub') {
             when {
-                expression { env.DeployToGitHub == true }
+                allOf {
+                    branch 'develop'
+                    equals expected: true, actual: params.DeployToGitHub
+                }
             }
             steps {
-                nodejs(nodeJSInstallationName: "node-18") {
-                    withCredentials([sshUserPrivateKey(credentialsId: "tridion-sites-extensions-examples-github-ssh", keyFileVariable: "SSH_KEY")]) {
-                        script {
-                            def SSH_KEY_UNIX_STYLE_PATH = env.SSH_KEY.replaceAll("\\\\","/")
-                            withEnv(["GIT_SSH_COMMAND=ssh -i $SSH_KEY_UNIX_STYLE_PATH -o StrictHostKeyChecking=no"]){
-                                bat "git push --mirror git@github.com:RWS/tridion-sites-extensions-examples.git"
-                            }
-                        }
+                withCredentials([sshUserPrivateKey(credentialsId: 'tridion-sites-extensions-examples-github-ssh', keyFileVariable: 'SSH_KEY')]) {
+                    withEnv(['GIT_SSH_COMMAND=ssh -o StrictHostKeyChecking=no -i ${SSH_KEY}']) {
+                        sh 'git remote -v | grep -w github || git remote add github git@github.com:RWS/tridion-sites-extensions-examples.git'
+                        sh 'git switch -c local_develop origin/develop'
+                        sh 'git push github local_develop:develop'
+                        sh 'git branch -D local_develop'
                     }
                 }
             }
