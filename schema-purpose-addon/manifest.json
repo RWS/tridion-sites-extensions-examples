@@ -1,0 +1,21 @@
+{
+    "id": "schema-purpose-addon",
+    "name": "Schema purpose addon",
+    "author": "RWS",
+    "description": "My addon for Tridion Experience Space",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "schema-purpose-column",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\schema-purpose-column\\main.js",
+                "files": [
+                    "dist\\schema-purpose-column\\main.js"
+                ]
+            }
+        }
+    ]
+}

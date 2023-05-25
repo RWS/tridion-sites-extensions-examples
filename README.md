@@ -1,1 +1,0 @@
-# Tridion Sites Extensions Examples
