@@ -1,0 +1,21 @@
+{
+    "id": "customize-table-toolbar-addon",
+    "name": "Customize table toolbar Addon",
+    "author": "RWS",
+    "description": "Toolbar customization",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "table-toolbar-customizations",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\table-toolbar-customizations\\main.js",
+                "files": [
+                    "dist\\table-toolbar-customizations\\main.js"
+                ]
+            }
+        }
+    ]
+}

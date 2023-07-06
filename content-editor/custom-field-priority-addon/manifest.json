@@ -1,0 +1,21 @@
+{
+    "id": "custom-field-priority-addon",
+    "name": "Custom field priority Addon",
+    "author": "RWS",
+    "description": "Multiple overlapping extensions for the same field",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "field-priority",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\field-priority\\main.js",
+                "files": [
+                    "dist\\field-priority\\main.js"
+                ]
+            }
+        }
+    ]
+}

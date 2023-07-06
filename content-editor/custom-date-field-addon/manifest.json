@@ -1,0 +1,21 @@
+{
+    "id": "custom-date-field-addon",
+    "name": "Custom date field Addon",
+    "author": "RWS",
+    "description": "General field extension for all fields of a date type, can be limited to a single schema",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "custom-date-field",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\custom-date-field\\main.js",
+                "files": [
+                    "dist\\custom-date-field\\main.js"
+                ]
+            }
+        }
+    ]
+}

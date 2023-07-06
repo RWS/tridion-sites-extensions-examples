@@ -1,0 +1,21 @@
+{
+    "id": "customize-table-context-menu-addon",
+    "name": "Customize table context menu Addon",
+    "author": "RWS",
+    "description": "Context menu customization",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "table-context-menu-customizations",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\table-context-menu-customizations\\main.js",
+                "files": [
+                    "dist\\table-context-menu-customizations\\main.js"
+                ]
+            }
+        }
+    ]
+}

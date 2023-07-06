@@ -1,0 +1,21 @@
+{
+    "id": "rtf-remove-single-line-wrapping-paragraph-addon",
+    "name": "RTF remove single line wrapping paragraph addon",
+    "author": "RWS",
+    "description": "Customization for RTF field",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "rtf-remove-single-line-wrapping-paragraph",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\rtf-remove-single-line-wrapping-paragraph\\main.js",
+                "files": [
+                    "dist\\rtf-remove-single-line-wrapping-paragraph\\main.js"
+                ]
+            }
+        }
+    ]
+}

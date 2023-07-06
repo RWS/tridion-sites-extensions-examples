@@ -1,0 +1,21 @@
+{
+    "id": "restricted-page-addon",
+    "name": "Restricted page Addon",
+    "author": "RWS",
+    "description": "Navigation item with restricted access",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "restricted-page",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\restricted-page\\main.js",
+                "files": [
+                    "dist\\restricted-page\\main.js"
+                ]
+            }
+        }
+    ]
+}

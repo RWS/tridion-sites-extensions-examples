@@ -1,0 +1,21 @@
+{
+    "id": "rtf-color-text-addon",
+    "name": "RTF color text Addon",
+    "author": "RWS",
+    "description": "Custom plugin for RTF field",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "rtf-color-text",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\rtf-color-text\\main.js",
+                "files": [
+                    "dist\\rtf-color-text\\main.js"
+                ]
+            }
+        }
+    ]
+}

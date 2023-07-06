@@ -1,0 +1,19 @@
+{
+  "id": "customize-table-toolbar-addon",
+  "name": "Activities Explorer table customization addon",
+  "author": "RWS",
+  "description": "Toolbar customization for Activities Explorer",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "table-toolbar-customizations",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\table-toolbar-customizations\\main.js",
+        "files": ["dist\\table-toolbar-customizations\\main.js"]
+      }
+    }
+  ]
+}
