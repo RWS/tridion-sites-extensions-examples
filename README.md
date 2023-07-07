@@ -84,5 +84,6 @@ Before running an example don't forget to change this value in `package.json` to
 | Operation                                               | Example                                                                               |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | Using addon configuration                               | [content-editor-color-picker-field-addon](./content-editor/color-picker-field-addon/) |
+| Using CSS modules for styling                           | [async-page-addon](./primary-navigation/async-page-addon/)                            |
 | Show a notification that is saved to the message center | [activities-explorer-simple-action-addon](./activities-explorer/simple-action-addon/) |
 | Show a confirmation dialog                              | [content-explorer-simple-action-addon](./content-explorer/simple-action-addon/)       |

@@ -1,5 +1,8 @@
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
@@ -17,14 +20,13 @@ export default {
     externals: [
         'react',
         'react-dom',
-        'styled-components',
         'tinymce',
         '@tridion-sites/extensions',
         '@tridion-sites/models',
         '@tridion-sites/open-api-client',
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js'],
+        extensions: ['.tsx', '.ts', '.jsx', '.js', '.css'],
         plugins: [new TsconfigPathsPlugin()],
     },
     module: {
@@ -34,9 +36,42 @@ export default {
                 exclude: /node_modules/,
                 use: [{ loader: 'babel-loader' }],
             },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__[local]__[hash:base64]',
+                                exportLocalsConvention: 'camelCaseOnly',
+                            },
+                        },
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    autoprefixer(),
+                                    cssnano({
+                                        safe: true,
+                                        autoprefixer: false,
+                                    }),
+                                ],
+                            },
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
+        new MiniCssExtractPlugin({ filename: '[name].css' }),
+
         new ForkTsCheckerWebpackPlugin({
             typescript: {
                 diagnosticOptions: {
