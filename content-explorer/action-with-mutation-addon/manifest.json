@@ -1,21 +1,19 @@
 {
-    "id": "action-with-mutation-addon",
-    "name": "Action with mutation Addon",
-    "author": "RWS",
-    "description": "Action with mutation",
-    "manifestVersion": "1.0.0",
-    "requireConfiguration": "optional",
-    "version": "1.0.0",
-    "extensions": [
-        {
-            "name": "switch-language-action",
-            "type": "ExperienceSpaceExtension",
-            "properties": {
-                "main": "dist\\switch-language-action\\main.js",
-                "files": [
-                    "dist\\switch-language-action\\main.js"
-                ]
-            }
-        }
-    ]
+  "id": "action-with-mutation-addon",
+  "name": "Content Explorer Change user language action addon",
+  "author": "RWS",
+  "description": "Action that allows to change current user language in Content Explorer",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "change-language-action",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\change-language-action\\main.js",
+        "files": ["dist\\change-language-action\\main.js"]
+      }
+    }
+  ]
 }

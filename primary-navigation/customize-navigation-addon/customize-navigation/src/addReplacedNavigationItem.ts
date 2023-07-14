@@ -4,7 +4,9 @@ import type { ExtensionBuilder } from '@tridion-sites/extensions';
 export const replacedNavigationItemId = 'replacedNavigationItem';
 
 /**
- * Adds dummy primary navigation item that will be replaced by another item (see ./replaceReplacedItemWithContentExplorer.ts).
+ * Adds a placeholder primary navigation item that will be replaced by another item
+ *
+ * @see ./replaceReplacedItemWithContentExplorer.ts
  */
 export const addReplacedNavigationItem = (builder: ExtensionBuilder) => {
     builder.translations.addTranslation('en', {

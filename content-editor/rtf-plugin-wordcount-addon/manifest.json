@@ -1,0 +1,19 @@
+{
+  "id": "rtf-plugin-wordcount-addon",
+  "name": "RTF plugin wordcount Addon",
+  "author": "RWS",
+  "description": "Customization for RTF field",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "rtf-plugin-wordcount",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\rtf-plugin-wordcount\\main.js",
+        "files": ["dist\\rtf-plugin-wordcount\\main.js"]
+      }
+    }
+  ]
+}

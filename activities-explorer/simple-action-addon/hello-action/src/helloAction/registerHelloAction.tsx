@@ -7,7 +7,7 @@ import { useHelloAction } from './useHelloAction';
 const helloActionId = 'helloAction';
 
 export const registerHelloAction = (builder: ExtensionBuilder) => {
-    // Lets first add all necessary translation strings
+    // First let's add all necessary translation strings
     builder.translations.addTranslation('en', {
         actionLabel: 'Say hello!',
         groupLabel: 'Simple actions',
@@ -25,7 +25,7 @@ export const registerHelloAction = (builder: ExtensionBuilder) => {
     });
 
     // Adding a new action to Activities Explorer with the provided icon and label
-    // Note that even though we added this action it will not be visible yet anywhere
+    // Note that even though we've added this action it will not be visible yet anywhere
     builder.activitiesExplorer.addAction(() => ({
         id: helloActionId,
         icon: <SmileIcon />,
@@ -42,7 +42,7 @@ export const registerHelloAction = (builder: ExtensionBuilder) => {
         actionIds: [helloActionId],
     };
 
-    // And now lets add it to the toolbar and the context menu.
+    // And now let's add it to the toolbar and the context menu.
     builder.activitiesExplorer.table.toolbar.addGroup(newActionGroup);
     builder.activitiesExplorer.table.contextMenu.addGroup(newActionGroup);
 };

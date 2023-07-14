@@ -1,21 +1,19 @@
 {
-    "id": "simple-action-addon",
-    "name": "Simple action Addon",
-    "author": "RWS",
-    "description": "Simple action",
-    "manifestVersion": "1.0.0",
-    "requireConfiguration": "optional",
-    "version": "1.0.0",
-    "extensions": [
-        {
-            "name": "confirm-say-hello-notification-action",
-            "type": "ExperienceSpaceExtension",
-            "properties": {
-                "main": "dist\\confirm-say-hello-notification-action\\main.js",
-                "files": [
-                    "dist\\confirm-say-hello-notification-action\\main.js"
-                ]
-            }
-        }
-    ]
+  "id": "simple-action-addon",
+  "name": "Content Explorer Hello action addon",
+  "author": "RWS",
+  "description": "Simple action with a confirmation in Content Explorer that shows a notification message",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "hello-action",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\hello-action\\main.js",
+        "files": ["dist\\hello-action\\main.js"]
+      }
+    }
+  ]
 }

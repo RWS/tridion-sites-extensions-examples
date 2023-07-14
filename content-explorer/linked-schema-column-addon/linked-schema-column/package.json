@@ -13,12 +13,12 @@
     "private": true,
     "scripts": {
         "build": "webpack --config ./webpack.prod.config.js --progress",
-        "dev": "webpack serve --config ./webpack.dev.config.js --progress --env target=http://0.0.0.0:8080 manifest=../manifest.json config=../linked-schema-column-addon.config.json",
+        "dev": "webpack serve --config ./webpack.dev.config.js --progress --env target=http://0.0.0.0:8080 manifest=../manifest.json",
         "pack": "sites-extensions pack --manifest=../manifest.json --input=../dist --output=../",
         "lint": "eslint . --fix && prettier --write \"src/**/*\""
     },
     "peerDependencies": {
-        "@tridion-sites/extensions": "1.0.1",
+        "@tridion-sites/extensions": "1.0.3",
         "@tridion-sites/models": "1.0.0",
         "@tridion-sites/open-api-client": "2.0.0",
         "react": "18.2.0",
@@ -33,8 +33,8 @@
         "@babel/preset-react": "7.18.6",
         "@babel/preset-typescript": "7.21.5",
         "@babel/runtime": "7.21.5",
-        "@tridion-sites/extensions": "1.0.1",
-        "@tridion-sites/extensions-cli": "1.0.0",
+        "@tridion-sites/extensions": "1.0.3",
+        "@tridion-sites/extensions-cli": "1.0.4",
         "@tridion-sites/models": "1.0.0",
         "@tridion-sites/open-api-client": "2.0.0",
         "@types/react": "18.2.6",

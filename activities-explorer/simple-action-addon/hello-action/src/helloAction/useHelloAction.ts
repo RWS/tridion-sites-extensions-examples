@@ -6,7 +6,7 @@ import { useConfirmation, useNotifications, useUserProfile } from '@tridion-site
 // This hook controls the behavior of Hello action
 // It gets notifications functionality and the current user information
 // out of the global data context.
-// We also demonstrate how you can add a confirmation dialog to your action.
+// It also shows how you can add a confirmation dialog to your action.
 export const useHelloAction = () => {
     const { notify } = useNotifications();
     const { userProfile } = useUserProfile();

@@ -8,7 +8,7 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 /** @type { import('webpack').Configuration } */
 export default env => ({
     mode: 'development',
-    entry: './src/index.tsx',
+    entry: './src/index.ts',
     output: {
         library: {
             type: 'system',

@@ -13,7 +13,7 @@
         "plugin:react-hooks/recommended",
         "prettier"
     ],
-    "plugins": ["react", "@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "react", "simple-import-sort", "unused-imports"],
     "env": {
         "es6": true,
         "browser": true
@@ -24,7 +24,16 @@
         }
     },
     "rules": {
+        "@typescript-eslint/consistent-type-imports": ["warn"],
         "@typescript-eslint/no-unused-vars": "off",
-        "import/no-default-export": "off"
+        "import/no-default-export": "off",
+        "simple-import-sort/imports": [
+            "error",
+            {
+                "groups": [["^\\u0000"], ["^@?\\w"], ["^@(.*|$)"], ["^[^.]"], ["^\\."]]
+            }
+        ],
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": "off"
     }
 }

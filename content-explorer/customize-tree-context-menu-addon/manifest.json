@@ -1,21 +1,19 @@
 {
-    "id": "customize-tree-context-menu-addon",
-    "name": "Customize tree context menu Addon",
-    "author": "RWS",
-    "description": "Context menu customization",
-    "manifestVersion": "1.0.0",
-    "requireConfiguration": "optional",
-    "version": "1.0.0",
-    "extensions": [
-        {
-            "name": "tree-customize-context-menu",
-            "type": "ExperienceSpaceExtension",
-            "properties": {
-                "main": "dist\\tree-customize-context-menu\\main.js",
-                "files": [
-                    "dist\\tree-customize-context-menu\\main.js"
-                ]
-            }
-        }
-    ]
+  "id": "customize-tree-context-menu-addon",
+  "name": "Customize tree context menu Addon",
+  "author": "RWS",
+  "description": "Tree context menu customization",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "tree-customize-context-menu",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\tree-customize-context-menu\\main.js",
+        "files": ["dist\\tree-customize-context-menu\\main.js"]
+      }
+    }
+  ]
 }

@@ -40,19 +40,18 @@ Before running an example don't forget to change this value in `package.json` to
 | Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                     |
 | Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/) |
 
-### Content editor
+### Content Editor
 
-| Operation                                                | Example                                                                                  |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Field extension for a particular schema                  | [custom-date-field-addon](./content-editor/custom-date-field-addon/)                     |
-| General field extension for all fields of a certain type | [custom-date-field-addon](./content-editor/custom-date-field-addon/)                     |
-| Field extension that works across multiple editors       | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                   |
-| Existing field customization                             | [custom-date-field-addon](./content-editor/custom-date-field-addon/)                     |
-| Custom plugin for RTF field                              | [rtf-color-text-addon](./content-editor/rtf-color-text-addon/)                           |
-| Customization for RTF field                              | [rtf-wordcount-customization-addon](./content-editor/rtf-wordcount-customization-addon/) |
-| Multiple overlapping extensions for the same field       | [custom-field-priority-addon](./content-editor/custom-field-priority-addon/)             |
+| Operation                                                     | Example                                                                                               |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Color picker field customization                              | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                                |
+| Date field customization                                      | [date-field-addon](./content-editor/date-field-addon/)                                                |
+| Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                        |
+| Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                          |
+| Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                            |
+| Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./rtf-remove-single-line-wrapping-paragraph-addon/) |
 
-### Content explorer
+### Content Explorer
 
 | Operation                                               | Example                                                                                                     |
 | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
@@ -64,7 +63,7 @@ Before running an example don't forget to change this value in `package.json` to
 | Column with custom rendering                            | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                                |
 | Context menu customization                              | [content-explorer-tree-customize-context-menu-addon](./content-explorer-tree-customize-context-menu-addon/) |
 
-### Activities explorer
+### Activities Explorer
 
 | Operation                                               | Example                                                                                         |
 | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |

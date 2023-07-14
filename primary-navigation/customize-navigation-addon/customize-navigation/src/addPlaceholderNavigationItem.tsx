@@ -5,7 +5,9 @@ import { Text } from '@tridion-sites/extensions';
 export const placeholderNavigationItemId = 'placeholderNavigationItem';
 
 /**
- * Adds dummy placeholder primary navigation item that shows simple text on the page and is going to be deleted (see ./deletePlaceholderPrimaryNavigationItem.ts).
+ * Adds a placeholder primary navigation item which is going to be deleted.
+ *
+ * @see ./deletePlaceholderPrimaryNavigationItem.ts
  */
 export const addPlaceholderNavigationItem = (builder: ExtensionBuilder) => {
     builder.translations.addTranslation('en', {

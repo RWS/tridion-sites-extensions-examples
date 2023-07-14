@@ -1,19 +1,21 @@
 {
-  "id": "work-items-column-addon",
-  "name": "Activities Explorer work items column addon",
-  "author": "RWS",
-  "description": "Custom column for Activities Explorer table using a third-party library",
-  "manifestVersion": "1.0.0",
-  "requireConfiguration": "optional",
-  "version": "1.0.0",
-  "extensions": [
-    {
-      "name": "work-items-column",
-      "type": "ExperienceSpaceExtension",
-      "properties": {
-        "main": "dist\\work-items-column\\main.js",
-        "files": ["dist\\work-items-column\\main.js"]
-      }
-    }
-  ]
+    "id": "work-items-column-addon",
+    "name": "Activities Explorer work items column addon",
+    "author": "RWS",
+    "description": "Custom column for Activities Explorer table using a third-party library",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "work-items-column",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\work-items-column\\main.js",
+                "files": [
+                    "dist\\work-items-column\\main.js"
+                ]
+            }
+        }
+    ]
 }

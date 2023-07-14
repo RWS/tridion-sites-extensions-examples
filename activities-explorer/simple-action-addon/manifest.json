@@ -1,19 +1,21 @@
 {
-  "id": "simple-action-addon",
-  "name": "Activities Explorer hello action addon",
-  "author": "RWS",
-  "description": "Simple action with a confirmation in Activities Explorer that shows a notification message",
-  "manifestVersion": "1.0.0",
-  "requireConfiguration": "optional",
-  "version": "1.0.0",
-  "extensions": [
-    {
-      "name": "hello-action",
-      "type": "ExperienceSpaceExtension",
-      "properties": {
-        "main": "dist\\hello-action\\main.js",
-        "files": ["dist\\hello-action\\main.js"]
-      }
-    }
-  ]
+    "id": "simple-action-addon",
+    "name": "Activities Explorer Hello action addon",
+    "author": "RWS",
+    "description": "Simple action with a confirmation in Activities Explorer that shows a notification message",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "hello-action",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\hello-action\\main.js",
+                "files": [
+                    "dist\\hello-action\\main.js"
+                ]
+            }
+        }
+    ]
 }

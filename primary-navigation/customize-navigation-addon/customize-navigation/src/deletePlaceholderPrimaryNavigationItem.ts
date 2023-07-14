@@ -3,8 +3,8 @@ import type { ExtensionBuilder } from '@tridion-sites/extensions';
 import { placeholderNavigationItemId } from './addPlaceholderNavigationItem';
 
 /**
- * Removes dummy navigational item by it's id using customize method. You can achieve same result using `remove` method.
- * @param builder
+ * Removes a placeholder navigation item by ID using `customize` method.
+ * The same result can be achieved using `remove` method.
  */
 export const deletePlaceholderPrimaryNavigationItem = (builder: ExtensionBuilder) => {
     builder.header.navigation.config.customize(config => {
