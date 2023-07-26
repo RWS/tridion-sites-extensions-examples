@@ -39,6 +39,8 @@ Before running an example don't forget to change this value in `package.json` to
 | Navigation item with restricted access                    | [restricted-page-addon](./primary-navigation/restricted-page-addon/)           |
 | Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                     |
 | Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/) |
+| Publish transactions navigation item                      | [publish-transactions-addon](./primary-navigation/publish-transactions-addon/) |
+| Classic UI navigation item                                | [classic-ui-addon](./primary-navigation/classic-ui-addon/)                     |
 
 ### Content Editor
 
