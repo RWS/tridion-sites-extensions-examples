@@ -1,0 +1,19 @@
+{
+  "id": "guided-field-addon",
+  "name": "Guided field Addon",
+  "author": "RWS",
+  "description": "Field extension that adds instructions or notes for the user. ",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "yes",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "guided-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\guided-field\\main.js",
+        "files": ["dist\\guided-field\\main.js"]
+      }
+    }
+  ]
+}

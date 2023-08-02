@@ -1,1 +1,1 @@
-export * from './registerAnyTypeField';
+export * from './addAnyTypeField';

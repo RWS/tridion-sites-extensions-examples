@@ -44,14 +44,18 @@ Before running an example don't forget to change this value in `package.json` to
 
 ### Content Editor
 
-| Operation                                                     | Example                                                                                               |
-| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Color picker field customization                              | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                                |
-| Date field customization                                      | [date-field-addon](./content-editor/date-field-addon/)                                                |
-| Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                        |
-| Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                          |
-| Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                            |
-| Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./rtf-remove-single-line-wrapping-paragraph-addon/) |
+| Operation                                                     | Example                                                                                                              |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Color picker field customization                              | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                                               |
+| Date field customization                                      | [date-field-addon](./content-editor/date-field-addon/)                                                               |
+| Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                                       |
+| Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                                         |
+| Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                                           |
+| Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./content-editor/rtf-remove-single-line-wrapping-paragraph-addon/) |
+| Select with predefined list of colors                         | [color-select-addon](./content-editor/color-select-addon/)                                                           |
+| Select with options from 3rd party API                        | [external-data-select-addon](./content-editor/external-data-select-addon/)                                           |
+| Field with guide message                                      | [guided-field-addon](./content-editor/guided-field-addon/)                                                           |
+| Text field that shows how many symbols left                   | [limited-length-field-addon](./content-editor/limited-length-field-addon/)                                           |
 
 ### Content Explorer
 

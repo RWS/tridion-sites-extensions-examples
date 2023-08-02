@@ -2,8 +2,8 @@ import { initializeGlobals } from '@globals';
 import type { ExtensionModule, RuntimeInformation } from '@tridion-sites/extensions';
 
 import packageJson from '../package.json';
-import { registerAnyTypeField } from './any-type-field';
-import { registerNumberField } from './number-field';
+import { addAnyTypeField } from './any-type-field';
+import { addNumberField } from './number-field';
 
 const extensionModule: ExtensionModule = {
     runtimeInfo: packageJson as RuntimeInformation,
@@ -18,8 +18,8 @@ const extensionModule: ExtensionModule = {
          * If the 'isAvailable' conditions of both extensions evaluate to true, the 'numberField'
          * extension will take precedence and be applied due to its higher priority.
          */
-        registerAnyTypeField(builder);
-        registerNumberField(builder);
+        addAnyTypeField(builder);
+        addNumberField(builder);
     },
 };
 

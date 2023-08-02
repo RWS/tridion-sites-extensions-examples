@@ -1,0 +1,7 @@
+{
+  "configuration": {
+    "color-select-field": {
+      "targetFieldCustomUrl": "colorSelect"
+    }
+  }
+}
