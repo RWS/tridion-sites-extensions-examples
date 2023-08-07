@@ -13,8 +13,8 @@ export const addLimitedLengthField = (builder: ExtensionBuilder) => {
      * Variables are mapped by names in `{{}}`.
      */
     builder.translations.addTranslation('en', {
-        leftLengthMessage: '{{length}} symbol(s) left to enter',
-        overLengthMessage: 'Remove {{length}} symbol(s), please',
+        leftLengthMessage: '{{length}} character(s) remaining',
+        overLengthMessage: 'Limit exceeded, please remove {{length}} character(s)',
     });
 
     builder.contentEditor.addFormField(() => ({
