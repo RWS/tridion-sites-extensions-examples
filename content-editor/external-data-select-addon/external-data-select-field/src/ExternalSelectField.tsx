@@ -39,7 +39,7 @@ export const ExternalSelectField = memo(
          */
         const list = useMemo(() => {
             if (!data.length) {
-                return [value as string];
+                return typeof value === 'string' ? [value] : [];
             }
 
             return data

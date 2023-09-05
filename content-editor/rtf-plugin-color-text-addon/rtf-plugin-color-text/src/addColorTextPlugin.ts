@@ -5,7 +5,7 @@ import type { ExtensionBuilder } from '@tridion-sites/extensions';
 import { useOptionalComponentEditor } from '@tridion-sites/extensions';
 import { XhtmlFieldDefinition } from '@tridion-sites/models';
 
-import { colorTextPlugin, colorTextMenuButtonId } from './colorTextPlugin';
+import { colorTextMenuButtonId, colorTextPlugin } from './colorTextPlugin';
 
 /**
  * Enhances the functionality of the RTF by introducing a menu that enables users to modify the text color.

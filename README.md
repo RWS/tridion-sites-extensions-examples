@@ -59,15 +59,15 @@ Before running an example don't forget to change this value in `package.json` to
 
 ### Content Explorer
 
-| Operation                                               | Example                                                                                                     |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Simple action                                           | [simple-action-addon](./content-explorer/simple-action-addon/)                                              |
-| Action with a mutation                                  | [action-with-mutation-addon](./content-explorer/action-with-mutation-addon/)                                |
-| Toolbar customization                                   | [customize-table-toolbar-addon](./content-explorer/customize-table-toolbar-addon/)                          |
-| Context menu customization                              | [customize-table-context-menu-addon](./content-explorer/customize-table-context-menu-addon/)                |
-| Column with a link to the other part of the application | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                                |
-| Column with custom rendering                            | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                                |
-| Context menu customization                              | [content-explorer-tree-customize-context-menu-addon](./content-explorer-tree-customize-context-menu-addon/) |
+| Operation                                                  | Example                                                                                                     |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Simple action                                              | [simple-action-addon](./content-explorer/simple-action-addon/)                                              |
+| Action with a mutation                                     | [action-with-mutation-addon](./content-explorer/action-with-mutation-addon/)                                |
+| Toolbar customization                                      | [customize-table-toolbar-addon](./content-explorer/customize-table-toolbar-addon/)                          |
+| Context menu customization                                 | [customize-table-context-menu-addon](./content-explorer/customize-table-context-menu-addon/)                |
+| Column with a link to the other part of the application    | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                                |
+| Column that renders custom data provided by data extenders | [published-to-column-addon](./content-explorer/published-to-column-addon/)                                  |
+| Context menu customization                                 | [content-explorer-tree-customize-context-menu-addon](./content-explorer-tree-customize-context-menu-addon/) |
 
 ### Activities Explorer
 
@@ -92,3 +92,4 @@ Before running an example don't forget to change this value in `package.json` to
 | Using CSS modules for styling                           | [async-page-addon](./primary-navigation/async-page-addon/)                            |
 | Show a notification that is saved to the message center | [activities-explorer-simple-action-addon](./activities-explorer/simple-action-addon/) |
 | Show a confirmation dialog                              | [content-explorer-simple-action-addon](./content-explorer/simple-action-addon/)       |
+| Using frontend and backend extensions together          | [published-to-column-addon](./content-explorer/published-to-column-addon/)            |

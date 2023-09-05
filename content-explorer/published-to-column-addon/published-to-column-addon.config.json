@@ -1,0 +1,22 @@
+{
+  "configuration": {
+    "published-to-column": {
+      "targetTypesPerPublication": {
+        "tcm:0-5-1": [
+          {
+            "id": "tcm:0-1-65538",
+            "title": "DXA Development"
+          },
+          {
+            "id": "tcm:0-2-65538",
+            "title": "DXA Staging"
+          },
+          {
+            "id": "tcm:0-3-65538",
+            "title": "DXA Live"
+          }
+        ]
+      }
+    }
+  }
+}

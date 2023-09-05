@@ -1,0 +1,18 @@
+{
+  "manifestVersion": "1.0",
+  "version": "1.0.0.0",
+  "id": "Example.PublishStatus",
+  "name": "Publish Status",
+  "author": "RWS Group",
+  "description": "Displays icons in the list to show the publish status of each item.",
+  "requireConfiguration": "No",
+  "extensions": [
+    {
+      "name": "PublishStatusEventHandler",
+      "type": "CMEventHandler",
+      "properties": {
+        "assemblyFileSource": "Example.PublishStatus.EventHandler.dll"
+      }
+    }
+  ]
+}
