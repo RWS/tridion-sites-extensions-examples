@@ -1,0 +1,7 @@
+{
+  "configuration": {
+    "guided-field": {
+      "targetFieldCustomUrl": "guide-text:"
+    }
+  }
+}

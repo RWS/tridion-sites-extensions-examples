@@ -1,0 +1,21 @@
+{
+    "id": "in-bundle-insights-panel-addon",
+    "name": "in-bundle-insights-panel-addon",
+    "author": "RWS",
+    "description": "Panel which displays the list of bundles which contain the selected item",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "in-bundle-insights-panel",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\in-bundle-insights-panel\\main.js",
+                "files": [
+                    "dist\\in-bundle-insights-panel\\main.js"
+                ]
+            }
+        }
+    ]
+}

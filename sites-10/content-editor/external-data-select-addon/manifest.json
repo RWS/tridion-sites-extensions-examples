@@ -1,0 +1,19 @@
+{
+  "id": "external-data-select-addon",
+  "name": "External data select Addon",
+  "author": "RWS",
+  "description": "Field extension for selecting option from external system.",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "yes",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "external-data-select-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\external-data-select-field\\main.js",
+        "files": ["dist\\external-data-select-field\\main.js"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "publish-transactions-addon",
+    "name": "Publish transactions page addon",
+    "author": "RWS",
+    "description": "Publish transactions addon for primary navigation",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "no",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "publish-transactions-extension",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\publish-transactions-extension\\main.js",
+                "files": [
+                    "dist\\publish-transactions-extension\\main.js"
+                ]
+            }
+        }
+    ]
+}

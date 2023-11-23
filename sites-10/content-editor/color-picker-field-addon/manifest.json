@@ -1,0 +1,19 @@
+{
+  "id": "color-picker-field-addon",
+  "name": "Color picker field Addon",
+  "author": "RWS",
+  "description": "Field extension that works across multiple editors",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "color-picker-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\color-picker-field\\main.js",
+        "files": ["dist\\color-picker-field\\main.js"]
+      }
+    }
+  ]
+}

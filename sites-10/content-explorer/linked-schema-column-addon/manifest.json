@@ -1,0 +1,21 @@
+{
+    "id": "linked-schema-column-addon",
+    "name": "Linked schema column Addon",
+    "author": "RWS",
+    "description": "Column with a link to the other part of the application",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "linked-schema-column",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\linked-schema-column\\main.js",
+                "files": [
+                    "dist\\linked-schema-column\\main.js"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "history-diff-insights-panel-addon",
+    "name": "history-diff-insights-panel-addon",
+    "author": "RWS",
+    "description": "Panel which compares the selected version of a versioned item against the other",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "history-diff-insights-panel",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\history-diff-insights-panel\\main.js",
+                "files": [
+                    "dist\\history-diff-insights-panel\\main.js"
+                ]
+            }
+        }
+    ]
+}

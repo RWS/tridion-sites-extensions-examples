@@ -1,0 +1,19 @@
+{
+  "id": "published-to-column-addon",
+  "name": "published-to-column",
+  "author": "RWS",
+  "description": "Custom column in the Content Explorer table, leveraging data extenders",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "yes",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "published-to-column",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\published-to-column\\main.js",
+        "files": ["dist\\published-to-column\\main.js"]
+      }
+    }
+  ]
+}
