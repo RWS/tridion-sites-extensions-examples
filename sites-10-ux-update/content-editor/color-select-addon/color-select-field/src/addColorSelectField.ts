@@ -22,6 +22,7 @@ export const addColorSelectField = (builder: ExtensionBuilder) => {
     builder.contentEditor.addFormField(() => ({
         /**
          * Component that will be rendered instead of the original field.
+         * The list of values for the dropdown to select from can be set in the item's Schema.
          */
         component: ColorSelectField,
         id: 'colorSelectField',

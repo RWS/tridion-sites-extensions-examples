@@ -10,6 +10,7 @@ export interface ExtensionConfiguration {
 
 /**
  * Color select expects valid hex color values as the options for this field.
+ * The list of values for the dropdown to select from can be set in the item's Schema.
  */
 export const addColorSelectField = (builder: ExtensionBuilder) => {
     builder.translations.addTranslation('en', {

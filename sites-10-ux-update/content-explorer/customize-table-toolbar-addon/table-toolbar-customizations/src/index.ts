@@ -4,7 +4,7 @@ import type { ExtensionModule, RuntimeInformation } from '@tridion-sites/extensi
 import packageJson from '../package.json';
 import { customizeReplacingActionsGroup } from './customizeReplacingActionsGroup';
 import { movePublishingActionsGroup } from './movePublishingActionsGroup';
-import { moveUnpublishBeforePublishUnpublishAction } from './moveUnpublishBeforePublishUnpublishAction';
+import { moveUnpublishBeforePublishAction } from './moveUnpublishBeforePublishAction';
 import { removeClipboardActionsGroup } from './removeClipboardActionsGroup';
 import { removeLocalizeAction } from './removeLocalizeAction';
 import { replaceOpenPublishingQueueWithNewStructureGroupAction } from './replaceOpenPublishingQueueWithNewStructureGroupAction';
@@ -14,7 +14,7 @@ const extensionModule: ExtensionModule = {
     runtimeInfo: packageJson as RuntimeInformation,
     initializeGlobals,
     initialize: builder => {
-        moveUnpublishBeforePublishUnpublishAction(builder);
+        moveUnpublishBeforePublishAction(builder);
         removeLocalizeAction(builder);
         replaceOpenPublishingQueueWithNewStructureGroupAction(builder);
 
