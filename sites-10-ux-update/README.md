@@ -2,30 +2,41 @@
 
 ## Running an example
 
-After checking out the repository navigate into the folder with the example that you are interested in, i.e:
+1) The following redirect URL should be configured in Access Management:
+
+{protocol}://localhost:3000/ui/signin-oidc
+
+where the protocol (i.e., http/https) should match that used for the targeted environment.
+
+2) Check out the repository and navigate into the folder with the example that you are interested in, e.g.,
 
 ```bash
 $ cd ./primary-navigation/async-page-addon/async-page
 ```
 
-Update `target=` argument in `scripts/dev` in `package.json` to the environment that you want to target.
+3) In the extension's `package.json` file, locate the `scripts.dev` key and edit the value, replacing `http://0.0.0.0:8080` with the address of the Tridion instance that you wish to target.
 
-Install the necessary dependencies
+4) Install the necessary dependencies
 
 ```bash
 $ npm install
 ```
 
-Run the example
+5) Run the example
 
 ```bash
 $ npm run dev
 ```
 
-## Note
+6) If you would like to package an extension for uploading to a server via the Add-ons Service, run
 
-All examples use http://0.0.0.0:8080 as the target environment.
-Before running an example don't forget to change this value in `package.json` to a compatible Tridion Sites environment that you want to target.
+```bash
+$ npm run pack
+```
+
+Further information about creating, building, and packing Tridion Sites Experience Space extensions, please refer to
+
+https://www.npmjs.com/package/@tridion-sites/extensions-cli
 
 ## Extension points
 
@@ -48,6 +59,7 @@ Before running an example don't forget to change this value in `package.json` to
 | Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                                       |
 | Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                                         |
 | Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                                           |
+| Customization of the RTF field styles format dropdown options | [rtf-customize-format-styles-addon](./content-editor/rtf-customize-format-styles-addon/)                             |
 | Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./content-editor/rtf-remove-single-line-wrapping-paragraph-addon/) |
 | Select with predefined list of colors                         | [color-select-addon](./content-editor/color-select-addon/)                                                           |
 | Select with options from 3rd party API                        | [external-data-select-addon](./content-editor/external-data-select-addon/)                                           |
