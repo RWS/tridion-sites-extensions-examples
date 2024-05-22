@@ -1,0 +1,21 @@
+{
+    "id": "actions-favorites-management-addon",
+    "name": "Content Explorer Add to Favorites management actions addon",
+    "author": "RWS",
+    "description": "Actions that allow to update current user favorites in Content Explorer",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "add-favorites-management-actions",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\add-favorites-management-actions\\main.js",
+                "files": [
+                    "dist\\add-favorites-management-actions\\main.js"
+                ]
+            }
+        }
+    ]
+}

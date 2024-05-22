@@ -2,33 +2,57 @@
 
 ## Running an example
 
-1) The following redirect URL should be configured in Access Management:
+1. Make sure the target environment allows requests to be made from custom subdomains (the local development domain should match your certificate common name). Customer instances hosted in the cloud (with domain tridion.sdlproducts.com) should be able to access `{local}.tridion.sdlproducts.com` using the default wildcard HTTPS certificate (`*.tridion.sdlproducts.com`). For other deployment scenarios (e.g., on-premise) you will need to adjust your HTTPS certificate to include the desired subdomain or use an allowed value within your configuration.
 
-{protocol}://localhost:3000/ui/signin-oidc
+2. Configure a redirect URL in Access Management:
 
-where the protocol (i.e., http/https) should match that used for the targeted environment.
+```
+{protocol}://{localhost}:{port}/ui/signin-oidc
 
-2) Check out the repository and navigate into the folder with the example that you are interested in, e.g.,
+// Example using defaults: http://localhost:3000/ui/signin-oidc
+// Cloud customers: https://local.tridion.sdlproducts.com/ui/signin-oidc
+```
+
+where the `protocol` (i.e., http/https) should match that used for the targeted environment.
+
+3. Check out the repository and navigate into the folder with the example that you are interested in, e.g.,
 
 ```bash
 $ cd ./primary-navigation/async-page-addon/async-page
 ```
 
-3) In the extension's `package.json` file, locate the `scripts.dev` key and edit the value, replacing `http://0.0.0.0:8080` with the address of the Tridion instance that you wish to target.
+4. In the extension's `package.json` file, locate the `scripts.dev` key and edit the value, replacing `http://0.0.0.0:8080` with the address of the Tridion instance that you wish to target.
 
-4) Install the necessary dependencies
+5. Inside `devServer.js` update your `host` constant to hostname you would like/allowed to use. The port number can be adjusted here as well if needed.
+
+```
+// From:
+const port = 3000;
+const host = `localhost:${port}`;
+// To:
+const port = 3000;
+const host = `local.tridion.sdlproducts.com:${port}`;
+```
+
+6. In `C:/Windows/System32/drivers/etc/host` (`/private/etc/hosts` on macOS) file add your host domain name from step 5, like so:
+
+```
+127.0.0.1 local.tridion.sdlproducts.com
+```
+
+7. Install the necessary dependencies
 
 ```bash
 $ npm install
 ```
 
-5) Run the example
+8. Run the example
 
 ```bash
 $ npm run dev
 ```
 
-6) If you would like to package an extension for uploading to a server via the Add-ons Service, run
+9. If you would like to package an extension for uploading to a server via the Add-ons Service, run
 
 ```bash
 $ npm run pack
@@ -73,6 +97,7 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 | Simple action                                                                          | [simple-action-addon](./content-explorer/simple-action-addon/)                               |
 | Action which copies ids of selected Schema items                                       | [copy-schema-item-ids-action-addon](./content-explorer/copy-schema-item-ids-action-addon/)   |
 | Action with a mutation                                                                 | [action-with-mutation-addon](./content-explorer/action-with-mutation-addon/)                 |
+| Actions which manage Favorites                                                         | [actions-favorites-management-addon](./content-explorer/actions-favorites-management-addon/) |
 | Toolbar customization                                                                  | [customize-table-toolbar-addon](./content-explorer/customize-table-toolbar-addon/)           |
 | Context menu customization                                                             | [customize-table-context-menu-addon](./content-explorer/customize-table-context-menu-addon/) |
 | Column with a link to the other part of the application                                | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                 |

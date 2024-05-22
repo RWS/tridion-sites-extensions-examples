@@ -27,12 +27,12 @@
         "tinymce": "6.4.2"
     },
     "devDependencies": {
-        "@babel/core": "7.23.3",
-        "@babel/plugin-transform-runtime": "7.23.4",
-        "@babel/preset-env": "7.23.3",
-        "@babel/preset-react": "7.23.3",
-        "@babel/preset-typescript": "7.23.3",
-        "@babel/runtime": "7.23.4",
+        "@babel/core": "7.24.5",
+        "@babel/plugin-transform-runtime": "7.24.3",
+        "@babel/preset-env": "7.24.5",
+        "@babel/preset-react": "7.24.1",
+        "@babel/preset-typescript": "7.24.1",
+        "@babel/runtime": "7.24.5",
         "@tridion-sites/extensions": "1.0.3",
         "@tridion-sites/extensions-cli": "1.0.4",
         "@tridion-sites/models": "1.0.0",
@@ -64,8 +64,8 @@
         "tinymce": "6.4.2",
         "tsconfig-paths-webpack-plugin": "4.0.1",
         "typescript": "5.0.4",
-        "webpack": "5.82.1",
-        "webpack-cli": "5.1.1",
-        "webpack-dev-server": "4.15.0"
+        "webpack": "5.91.0",
+        "webpack-cli": "5.1.4",
+        "webpack-dev-server": "5.0.4"
     }
 }
