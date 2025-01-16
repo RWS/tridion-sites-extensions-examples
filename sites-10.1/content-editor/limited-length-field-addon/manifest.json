@@ -1,0 +1,19 @@
+{
+  "id": "limited-length-field-addon",
+  "name": "Limited length fields Addon",
+  "author": "RWS",
+  "description": "Field extension that shows remaining amount of symbols to enter.",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "no",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "limited-length-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\limited-length-field\\main.js",
+        "files": ["dist\\limited-length-field\\main.js"]
+      }
+    }
+  ]
+}

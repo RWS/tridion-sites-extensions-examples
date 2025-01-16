@@ -1,0 +1,73 @@
+{
+    "name": "guided-field",
+    "version": "1.0.0",
+    "description": "Field extension that adds instructions or notes for the user.",
+    "author": "RWS",
+    "homepage": "https://www.rws.com",
+    "license": "Apache-2.0",
+    "type": "module",
+    "main": "../dist/guided-field/main.js",
+    "files": [
+        "../dist/guided-field/*"
+    ],
+    "private": true,
+    "scripts": {
+        "build": "webpack --config ./webpack.prod.config.js --progress",
+        "dev": "webpack serve --config ./webpack.dev.config.js --progress --env target=http://0.0.0.0:8080 manifest=../manifest.json config=../guided-field-addon.config.json",
+        "pack": "sites-extensions pack --manifest=../manifest.json --input=../dist --output=../",
+        "prepack": "npm run build",
+        "lint": "eslint . --fix && prettier --write \"src/**/*\""
+    },
+    "peerDependencies": {
+        "@tridion-sites/extensions": "3.0.0",
+        "@tridion-sites/models": "2.0.0",
+        "@tridion-sites/open-api-client": "4.0.0",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "styled-components": "6.1.13",
+        "tinymce": "7.3.0"
+    },
+    "dependencies": {
+        "@emotion/react": "11.10.6",
+        "@mantine/core": "6.0.9",
+        "@mantine/hooks": "6.0.9"
+    },
+    "devDependencies": {
+        "@babel/core": "7.25.8",
+        "@babel/plugin-transform-runtime": "7.25.7",
+        "@babel/preset-env": "7.25.8",
+        "@babel/preset-react": "7.25.7",
+        "@babel/preset-typescript": "7.25.7",
+        "@babel/runtime": "7.25.7",
+        "@tridion-sites/extensions": "3.0.0",
+        "@tridion-sites/extensions-cli": "1.2.1",
+        "@tridion-sites/models": "2.0.0",
+        "@tridion-sites/open-api-client": "4.0.0",
+        "@types/react": "18.3.11",
+        "@types/react-dom": "18.3.1",
+        "@types/react-is": "18.3.0",
+        "@typescript-eslint/eslint-plugin": "6.21.0",
+        "@typescript-eslint/parser": "6.21.0",
+        "babel-loader": "9.2.1",
+        "babel-plugin-styled-components": "2.1.4",
+        "eslint": "8.57.1",
+        "eslint-config-prettier": "9.1.0",
+        "eslint-formatter-pretty": "5.0.0",
+        "eslint-plugin-react": "7.37.1",
+        "eslint-plugin-react-hooks": "4.6.2",
+        "eslint-plugin-simple-import-sort": "10.0.0",
+        "eslint-plugin-unused-imports": "3.2.0",
+        "fork-ts-checker-webpack-plugin": "8.0.0",
+        "prettier": "3.3.3",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
+        "react-is": "18.3.1",
+        "styled-components": "6.1.13",
+        "tinymce": "7.3.0",
+        "tsconfig-paths-webpack-plugin": "4.1.0",
+        "typescript": "5.5.2",
+        "webpack": "5.95.0",
+        "webpack-cli": "5.1.4",
+        "webpack-dev-server": "5.1.0"
+    }
+}

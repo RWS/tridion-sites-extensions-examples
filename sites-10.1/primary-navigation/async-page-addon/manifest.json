@@ -1,0 +1,19 @@
+{
+    "id": "async-page-addon",
+    "name": "Async page Addon",
+    "author": "RWS",
+    "description": "Dynamic navigation item that depends on the async request",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "async-page",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\async-page\\main.js",
+                "files": ["dist\\async-page\\main.js", "dist\\async-page\\main.css"]
+            }
+        }
+    ]
+}

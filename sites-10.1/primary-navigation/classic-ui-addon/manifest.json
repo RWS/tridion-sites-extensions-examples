@@ -1,0 +1,21 @@
+{
+    "id": "classic-ui-addon",
+    "name": "Classic UI Publishing Queue Addon",
+    "author": "RWS",
+    "description": "Adds an iframe with the Classic UI",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "no",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "classic-ui-extension",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\classic-ui-extension\\main.js",
+                "files": [
+                    "dist\\classic-ui-extension\\main.js"
+                ]
+            }
+        }
+    ]
+}

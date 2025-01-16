@@ -1,0 +1,21 @@
+{
+    "id": "xs-create-workflow-task-addon",
+    "name": "XS Create workflow task Addon",
+    "author": "RWS",
+    "description": "My addon for Tridion Experience Space",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "xs-create-workflow-task",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\xs-create-workflow-task\\main.js",
+                "files": [
+                    "dist\\xs-create-workflow-task\\main.js"
+                ]
+            }
+        }
+    ]
+}

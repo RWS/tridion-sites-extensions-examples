@@ -1,0 +1,21 @@
+{
+    "id": "customize-navigation-addon",
+    "name": "Customize navigation Addon",
+    "author": "RWS",
+    "description": "My addon for Tridion Experience Space",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "customize-navigation",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\customize-navigation\\main.js",
+                "files": [
+                    "dist\\customize-navigation\\main.js"
+                ]
+            }
+        }
+    ]
+}

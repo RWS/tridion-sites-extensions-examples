@@ -1,0 +1,21 @@
+{
+    "id": "rtf-customize-format-styles-addon",
+    "name": "Customize format styles",
+    "author": "RWS",
+    "description": "Formats dropdown menu customization",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "rtf-customize-format-styles",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\rtf-customize-format-styles\\main.js",
+                "files": [
+                    "dist\\rtf-customize-format-styles\\main.js"
+                ]
+            }
+        }
+    ]
+}

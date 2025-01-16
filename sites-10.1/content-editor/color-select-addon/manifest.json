@@ -1,0 +1,19 @@
+{
+  "id": "color-select-addon",
+  "name": "Color select addon",
+  "author": "RWS",
+  "description": "Field extension for selecting color from predefined list of options.",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "yes",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "color-select-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\color-select-field\\main.js",
+        "files": ["dist\\color-select-field\\main.js"]
+      }
+    }
+  ]
+}

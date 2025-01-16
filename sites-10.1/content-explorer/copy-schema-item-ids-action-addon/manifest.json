@@ -1,0 +1,21 @@
+{
+    "id": "copy-schema-item-ids-action-addon",
+    "name": "copy-schema-item-ids-action-addon",
+    "author": "RWS",
+    "description": "Action which allows user to copy itemIds of the Schemas selected",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "copy-schema-item-ids-action",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\copy-schema-item-ids-action\\main.js",
+                "files": [
+                    "dist\\copy-schema-item-ids-action\\main.js"
+                ]
+            }
+        }
+    ]
+}
