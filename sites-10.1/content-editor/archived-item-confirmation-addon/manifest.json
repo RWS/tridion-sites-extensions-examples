@@ -1,0 +1,21 @@
+{
+    "id": "archived-item-confirmation-addon",
+    "name": "Item Editor confirmation Addon",
+    "author": "RWS",
+    "description": "Expiration warning displaying before allowing user to edit a component",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "archived-item-confirmation",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\archived-item-confirmation\\main.js",
+                "files": [
+                    "dist\\archived-item-confirmation\\main.js"
+                ]
+            }
+        }
+    ]
+}
