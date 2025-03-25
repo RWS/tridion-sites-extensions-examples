@@ -9,11 +9,13 @@ import {
     useUserProfile,
 } from '@tridion-sites/extensions';
 import type { RepositoryLocalObject } from '@tridion-sites/models';
-import type {
-    FavoriteLink as BackendUserFavoriteLink,
-    UserProfile as BackendUserProfile,
+import {
+    type FavoriteLink as BackendUserFavoriteLink,
+    type UserProfile as BackendUserProfile,
+    UserProfileService,
 } from '@tridion-sites/open-api-client';
-import { UserProfileService } from '@tridion-sites/open-api-client';
+
+import { getExistingFavoritesLinks } from '../getExistingFavoritesLinks';
 
 export const useAddToFavoritesAction = () => {
     const { notify } = useNotifications();
@@ -21,22 +23,13 @@ export const useAddToFavoritesAction = () => {
     const contentExplorer = useOptionalContentExplorer();
     const contentExplorerTable = useOptionalContentExplorerTable();
 
-    const favorites = useMemo(
-        () => (userProfile?.preferences?.favorites || []).map(i => i.getInternalModel()),
+    const favoritesItemIds = useMemo(
+        () => new Set(userProfile?.preferences?.favorites.map(link => link.idRef)),
         [userProfile?.preferences?.favorites],
-    );
-    const favoritesItemIds = useMemo(() => new Set(favorites.map(link => link.IdRef)), [favorites]);
-
-    const isFavoritesNode = useMemo(
-        () => isFavoritesNodeId(contentExplorer?.currentNode?.id || ''),
-        [contentExplorer?.currentNode?.id],
     );
 
     const applicableItems = useMemo(
-        () =>
-            (contentExplorerTable?.selection.selectedItems || []).filter(
-                item => !favoritesItemIds.has(item.id.asString),
-            ),
+        () => (contentExplorerTable?.selection.selectedItems || []).filter(item => !favoritesItemIds.has(item.id)),
         [contentExplorerTable?.selection.selectedItems, favoritesItemIds],
     );
 
@@ -57,9 +50,11 @@ export const useAddToFavoritesAction = () => {
     // The action should be available if there are items selected
     // and at least one of them is not in Favorites list already
     const isAvailable = useMemo(() => {
+        if (!contentExplorer?.currentNode?.id) return false;
+
         const hasApplicableItems = applicableItems.length > 0;
-        return hasApplicableItems && !isFavoritesNode;
-    }, [applicableItems.length, isFavoritesNode]);
+        return hasApplicableItems && !isFavoritesNodeId(contentExplorer.currentNode.id);
+    }, [applicableItems.length, contentExplorer?.currentNode?.id]);
 
     const execute = useCallback(async () => {
         const userId = userProfile?.user?.id.asString;
@@ -67,17 +62,22 @@ export const useAddToFavoritesAction = () => {
         if (!userId) return;
         if (!isAvailable) return;
 
-        const updatedUserProfile: BackendUserProfile = {
-            ...userProfile?.getInternalModel(),
-            Preferences: {
-                ...userProfile?.preferences,
-                Favorites: [...favorites, ...filteredSelectedFavoriteItemLinks],
-            },
-        };
+        const backendUserProfile = userProfile.getInternalModel();
 
         try {
+            // Fetch user's favorites list directly from server to prevent stale data overwrites.
+            const existingFavorites = (await getExistingFavoritesLinks()) ?? [];
+
+            const updatedUserProfile: BackendUserProfile = {
+                ...backendUserProfile,
+                Preferences: {
+                    ...backendUserProfile.Preferences,
+                    Favorites: [...existingFavorites, ...filteredSelectedFavoriteItemLinks],
+                },
+            };
+
             await UserProfileService.updateUserProfile({
-                escapedUserId: userProfile?.user.id.asString,
+                escapedUserId: userId,
                 userProfile: updatedUserProfile,
             });
             notify({
@@ -95,7 +95,7 @@ export const useAddToFavoritesAction = () => {
                 showInMessageCenter: true,
             });
         }
-    }, [userProfile, isAvailable, favorites, filteredSelectedFavoriteItemLinks, notify, applicableItems.length]);
+    }, [userProfile, isAvailable, filteredSelectedFavoriteItemLinks, notify, applicableItems.length]);
 
     return {
         isAvailable,

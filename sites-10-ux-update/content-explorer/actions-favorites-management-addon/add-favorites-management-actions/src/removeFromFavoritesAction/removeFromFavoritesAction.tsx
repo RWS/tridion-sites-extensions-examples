@@ -8,61 +8,56 @@ import {
     useOptionalContentExplorerTable,
     useUserProfile,
 } from '@tridion-sites/extensions';
-import type {
-    FavoriteLink as BackendUserFavoriteLink,
-    UserProfile as BackendUserProfile,
-} from '@tridion-sites/open-api-client';
+import { parseItemUri } from '@tridion-sites/models';
+import type { UserProfile as BackendUserProfile } from '@tridion-sites/open-api-client';
 import { UserProfileService } from '@tridion-sites/open-api-client';
+
+import { getExistingFavoritesLinks } from '../getExistingFavoritesLinks';
 
 export const useRemoveFromFavoritesAction = () => {
     const { notify } = useNotifications();
     const { userProfile } = useUserProfile();
 
     const contentExplorerTable = useOptionalContentExplorerTable();
-    const favorites = useMemo(
-        () => (userProfile?.preferences?.favorites || []).map(i => i.getInternalModel()),
-        [userProfile],
-    );
-
     const contentExplorer = useOptionalContentExplorer();
-    const isFavoritesNode = isFavoritesNodeId(contentExplorer?.currentNode?.id || '');
     const selectedItemsCount = contentExplorerTable?.selection.ids.size;
+
+    const selectedItemsSet = useMemo(
+        () => new Set(contentExplorerTable?.selection.ids),
+        [contentExplorerTable?.selection.ids],
+    );
 
     // The action should be available if there are items selected
     const isAvailable = useMemo(() => {
-        return !!selectedItemsCount && isFavoritesNode;
-    }, [isFavoritesNode, selectedItemsCount]);
+        if (!contentExplorer?.currentNode?.id) return false;
+
+        return !!selectedItemsCount && isFavoritesNodeId(contentExplorer.currentNode.id);
+    }, [contentExplorer?.currentNode?.id, selectedItemsCount]);
 
     const execute = useCallback(async () => {
-        const userId = userProfile?.user?.id.asString;
+        const userId = userProfile.user?.id.asString;
 
         if (!userId) return;
         if (!isAvailable) return;
 
-        const selectedItemLinks = Array.from(contentExplorerTable?.selection.selectedItems || []).map(item => {
-            // Each item from the selection is being translated to BackendUserFavoriteLink
-            // to overwrite current user's favorites with an updated Favorites array.
-            const backendModel: BackendUserFavoriteLink = {
-                $type: 'FavoriteLink',
-                IdRef: item.id.asString,
-                Title: item.title,
-                Path: '//',
-            };
-            return backendModel;
-        });
-
-        const favoritesItemIds = new Set(selectedItemLinks.map(link => link.IdRef));
-        const updatedUserProfile: BackendUserProfile = {
-            ...userProfile.getInternalModel(),
-            Preferences: {
-                ...userProfile.preferences,
-                Favorites: [...favorites.filter(link => !favoritesItemIds.has(link.IdRef))],
-            },
-        };
+        const backendUserProfile = userProfile.getInternalModel();
 
         try {
+            // Fetch user's favorites list directly from server to prevent stale data overwrites.
+            const favorites = (await getExistingFavoritesLinks()) ?? [];
+
+            const updatedUserProfile: BackendUserProfile = {
+                ...backendUserProfile,
+                Preferences: {
+                    ...backendUserProfile.Preferences,
+                    Favorites: [
+                        ...favorites.filter(link => link.IdRef && !selectedItemsSet.has(parseItemUri(link.IdRef))),
+                    ],
+                },
+            };
+
             await UserProfileService.updateUserProfile({
-                escapedUserId: userProfile.user.id.asString,
+                escapedUserId: userId,
                 userProfile: updatedUserProfile,
             });
             contentExplorerTable?.refresh();
@@ -82,7 +77,7 @@ export const useRemoveFromFavoritesAction = () => {
                 showInMessageCenter: true,
             });
         }
-    }, [userProfile, isAvailable, contentExplorerTable, favorites, notify, selectedItemsCount]);
+    }, [userProfile, isAvailable, contentExplorerTable, selectedItemsSet, notify, selectedItemsCount]);
 
     return {
         isAvailable,
