@@ -77,7 +77,7 @@ export const useRemoveFromFavoritesAction = () => {
                 showInMessageCenter: true,
             });
         }
-    }, [userProfile, isAvailable, contentExplorerTable, selectedItemsSet, notify, selectedItemsCount]);
+    }, [userProfile, isAvailable, selectedItemsSet, notify, selectedItemsCount]);
 
     return {
         isAvailable,

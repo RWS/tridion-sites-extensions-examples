@@ -153,10 +153,10 @@ Since some of updated dependencies of Extension API framework have breaking chan
     "tinymce": "6.7.1"
 
     // After
-    "@tridion-sites/extensions": "3.0.0",
+    "@tridion-sites/extensions": "3.1.0",
     "@tridion-sites/extensions-cli": "1.2.0",
-    "@tridion-sites/models": "2.0.0",
-    "@tridion-sites/open-api-client": "4.0.0",
+    "@tridion-sites/models": "2.1.0",
+    "@tridion-sites/open-api-client": "4.1.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "styled-components": "6.1.13",

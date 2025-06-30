@@ -149,11 +149,11 @@ Since some of updated dependencies of Extension API framework have breaking chan
     "tinymce": "6.4.2"
 
     // After
-    "@tridion-sites/extensions": "2.0.0",
-    "@tridion-sites/extensions-cli": "1.1.0",
-    "@tridion-sites/models": "1.1.0",
+    "@tridion-sites/extensions": "2.0.3",
+    "@tridion-sites/extensions-cli": "1.1.3",
+    "@tridion-sites/models": "1.2.1",
     "@tridion-sites/open-api-client": "3.0.0",
-    "tinymce": "6.7.1"
+    "tinymce": "6.8.4"
 ```
 
 (optional) For serving live addons together with local addons `targetUrl` can be passed to `setupExtensionsResponse`.
@@ -209,3 +209,9 @@ WorkflowService.listActivityInstances({
   processDefinitionId,
 });
 ```
+
+## Important notes
+
+It's a known issue that `useOptionalContentExplorerTable` (and alternatives in other explorers) returns a new value every time a custom action is registered or changed.
+As a result, infinite re-renders will be triggered if the state value is used in any hook dependency list of your `useAction` hook.
+To avoid this dependency loop, rather than using the whole state object as a dependency, only its properties should be used. Alternatively, it can be wrapped with a ref object to make it stable.

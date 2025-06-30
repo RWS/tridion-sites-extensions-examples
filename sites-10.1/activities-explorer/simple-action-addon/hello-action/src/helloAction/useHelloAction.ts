@@ -21,7 +21,7 @@ export const useHelloAction = () => {
         });
     }, [notify, userName]);
 
-    const execute = useConfirmation({
+    const { open } = useConfirmation({
         title: t('confirmationDialog.title'),
         description: t('confirmationDialog.description'),
         okButtonLabel: t('confirmationDialog.okButtonLabel'),
@@ -31,6 +31,6 @@ export const useHelloAction = () => {
 
     return {
         isAvailable: true,
-        execute,
+        execute: open,
     };
 };
