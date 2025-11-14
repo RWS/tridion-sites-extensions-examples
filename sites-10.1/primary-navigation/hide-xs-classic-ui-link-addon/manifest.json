@@ -1,0 +1,21 @@
+{
+    "id": "hide-xs-classic-ui-link-addon",
+    "name": "Hide XS Classic UI link",
+    "author": "RWS",
+    "description": "Addon includes XS extension that hides Classic UI link from info menu when installed",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "no",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "hide-classic-ui-link",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\hide-classic-ui-link\\main.js",
+                "files": [
+                    "dist\\hide-classic-ui-link\\main.js"
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "prevent-folder-publishing-addon",
+    "name": "Prevent folder publishing in XS",
+    "author": "RWS",
+    "description": "Example shows how to customize access to publish specific item types",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "prevent-folder-publishing",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\prevent-folder-publishing\\main.js",
+                "files": [
+                    "dist\\prevent-folder-publishing\\main.js"
+                ]
+            }
+        }
+    ]
+}

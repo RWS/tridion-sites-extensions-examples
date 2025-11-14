@@ -66,13 +66,14 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 
 ### Primary Navigation
 
-| Operation                                                 | Example                                                                        |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Navigation item with restricted access                    | [restricted-page-addon](./primary-navigation/restricted-page-addon/)           |
-| Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                     |
-| Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/) |
-| Publish transactions navigation item                      | [publish-transactions-addon](./primary-navigation/publish-transactions-addon/) |
-| Classic UI navigation item                                | [classic-ui-addon](./primary-navigation/classic-ui-addon/)                     |
+| Operation                                                 | Example                                                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Navigation item with restricted access                    | [restricted-page-addon](./primary-navigation/restricted-page-addon/)                 |
+| Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                           |
+| Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/)       |
+| Publish transactions navigation item                      | [publish-transactions-addon](./primary-navigation/publish-transactions-addon/)       |
+| Classic UI navigation item                                | [classic-ui-addon](./primary-navigation/classic-ui-addon/)                           |
+| Hide Classic UI link from info menu                       | [hide-xs-classic-ui-link-addon](./primary-navigation/hide-xs-classic-ui-link-addon/) |
 
 ### Content Editor
 
@@ -89,6 +90,7 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 | Select with options from 3rd party API                        | [external-data-select-addon](./content-editor/external-data-select-addon/)                                           |
 | Field with guide message                                      | [guided-field-addon](./content-editor/guided-field-addon/)                                                           |
 | Text field that shows how many symbols left                   | [limited-length-field-addon](./content-editor/limited-length-field-addon/)                                           |
+| Show confirmation dialog when opening an archived item        | [archived-item-confirmation-addon](./content-editor/archived-item-confirmation-addon/)                               |
 
 ### Content Explorer
 
@@ -116,6 +118,12 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 | Toolbar customization                                   | [customize-table-toolbar-addon](./activities-explorer/customize-table-toolbar-addon/)           |
 | Context menu customization                              | [customize-table-context-menu-addon](./activities-explorer/customize-table-context-menu-addon/) |
 | Column with a link to the other part of the application | [work-items-column-addon](./activities-explorer/work-items-column-addon/)                       |
+
+### Access Control
+
+| Operation                                             | Example                                                                              |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Prevent folder publishing based on selected item type | [prevent-folder-publishing-addon](./access-control/prevent-folder-publishing-addon/) |
 
 ### Translations
 
@@ -153,14 +161,14 @@ Since some of updated dependencies of Extension API framework have breaking chan
     "tinymce": "6.7.1"
 
     // After
-    "@tridion-sites/extensions": "3.1.0",
-    "@tridion-sites/extensions-cli": "1.2.0",
-    "@tridion-sites/models": "2.1.0",
-    "@tridion-sites/open-api-client": "4.1.0",
+    "@tridion-sites/extensions": "3.2.0",
+    "@tridion-sites/extensions-cli": "1.2.3",
+    "@tridion-sites/models": "2.2.0",
+    "@tridion-sites/open-api-client": "4.2.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "styled-components": "6.1.13",
-    "tinymce": "7.3.0"
+    "styled-components": "6.1.19",
+    "tinymce": "7.9.1"
 ```
 
 ### 2. Codebase
@@ -171,8 +179,8 @@ In Tridion Sites 10.1, a new V3 API version is introduced. The existing V1 and V
 
 | Experience Space version | @tridion-sites/open-api-client | REST API version |
 | ------------------------ | ------------------------------ | ---------------- |
-| 10.0                     | 3.0.0                          | v2               |
-| 10.1                     | 4.0.0                          | v3               |
+| 10.0                     | 3.0.0^                         | v2               |
+| 10.1                     | 4.0.0^                         | v3               |
 
 In V3 there are 2 endpoints that were removed, therefore you should replace them in your codebase:
 
@@ -232,7 +240,7 @@ console.log(item.metadata.componentLinkField.idRef.asString) // 'tcm:1-1'
 
 #### @tridion-sites/extensions
 
-TinyMCE has been updated to v7.3.0. Please check the official changelog for major updates: https://www.tiny.cloud/docs/tinymce/latest/changelog/#7-0-0-2024-03-20
+TinyMCE has been updated to v7.9.1. Please check the official changelog for major updates: https://www.tiny.cloud/docs/tinymce/7/changelog/#7-9-1-2025-05-29
 Potential changes required for existing extension will depend on tiny API usage in it.
 
 ---
