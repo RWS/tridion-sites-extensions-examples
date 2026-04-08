@@ -1,0 +1,8 @@
+{
+  "configuration": {
+    "custom-editor-context-for-field": {
+      "extensionPriority": 1,
+      "fieldPriority": 1
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "id": "editor-multiselect-field-addon",
+    "name": "Mutliselect field example Addon",
+    "author": "RWS",
+    "description": "Example extension for handling multiselect field type",
+    "manifestVersion": "1.0.0",
+    "requireConfiguration": "optional",
+    "version": "1.0.0",
+    "extensions": [
+        {
+            "name": "editor-multiselect-field",
+            "type": "ExperienceSpaceExtension",
+            "properties": {
+                "main": "dist\\editor-multiselect-field\\main.js",
+                "files": [
+                    "dist\\editor-multiselect-field\\main.js"
+                ]
+            }
+        }
+    ]
+}

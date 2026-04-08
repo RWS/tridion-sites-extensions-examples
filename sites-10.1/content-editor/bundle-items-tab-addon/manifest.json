@@ -1,0 +1,19 @@
+{
+  "id": "bundle-items-tab-addon",
+  "name": "Bundle added items tab",
+  "author": "RWS",
+  "description": "Tab with items added to a bundle for XS",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "bundle-items-tab",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\bundle-items-tab\\main.js",
+        "files": ["dist\\bundle-items-tab\\main.js"]
+      }
+    }
+  ]
+}

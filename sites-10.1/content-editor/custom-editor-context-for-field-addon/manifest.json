@@ -1,0 +1,19 @@
+{
+  "id": "custom-editor-context-for-field-addon",
+  "name": "XS Editor: custom context for fields",
+  "author": "RWS",
+  "description": "My addon for Tridion Experience Space",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "custom-editor-context-for-field",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\custom-editor-context-for-field\\main.js",
+        "files": ["dist\\custom-editor-context-for-field\\main.js"]
+      }
+    }
+  ]
+}

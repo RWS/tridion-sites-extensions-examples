@@ -66,64 +66,67 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 
 ### Primary Navigation
 
-| Operation                                                 | Example                                                                              |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Navigation item with restricted access                    | [restricted-page-addon](./primary-navigation/restricted-page-addon/)                 |
-| Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                           |
-| Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/)       |
-| Publish transactions navigation item                      | [publish-transactions-addon](./primary-navigation/publish-transactions-addon/)       |
-| Classic UI navigation item                                | [classic-ui-addon](./primary-navigation/classic-ui-addon/)                           |
-| Hide Classic UI link from info menu                       | [hide-xs-classic-ui-link-addon](./primary-navigation/hide-xs-classic-ui-link-addon/) |
+| Operation                                                 | Example                                                                              | Available |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------- |
+| Navigation item with restricted access                    | [restricted-page-addon](./primary-navigation/restricted-page-addon/)                 | 10.0      |
+| Dynamic navigation item that depends on the async request | [async-page-addon](./primary-navigation/async-page-addon/)                           | 10.0      |
+| Navigation items customization                            | [customize-navigation-addon](./primary-navigation/customize-navigation-addon/)       | 10.0      |
+| Publish transactions navigation item                      | [publish-transactions-addon](./primary-navigation/publish-transactions-addon/)       | 10.0      |
+| Classic UI navigation item                                | [classic-ui-addon](./primary-navigation/classic-ui-addon/)                           | 10.0      |
+| Hide Classic UI link from info menu                       | [hide-xs-classic-ui-link-addon](./primary-navigation/hide-xs-classic-ui-link-addon/) | 10.1.2    |
 
 ### Content Editor
 
-| Operation                                                     | Example                                                                                                              |
-| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Color picker field customization                              | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                                               |
-| Date field customization                                      | [date-field-addon](./content-editor/date-field-addon/)                                                               |
-| Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                                       |
-| Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                                         |
-| Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                                           |
-| Customization of the RTF field styles format dropdown options | [rtf-customize-format-styles-addon](./content-editor/rtf-customize-format-styles-addon/)                             |
-| Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./content-editor/rtf-remove-single-line-wrapping-paragraph-addon/) |
-| Select with predefined list of colors                         | [color-select-addon](./content-editor/color-select-addon/)                                                           |
-| Select with options from 3rd party API                        | [external-data-select-addon](./content-editor/external-data-select-addon/)                                           |
-| Field with guide message                                      | [guided-field-addon](./content-editor/guided-field-addon/)                                                           |
-| Text field that shows how many symbols left                   | [limited-length-field-addon](./content-editor/limited-length-field-addon/)                                           |
-| Show confirmation dialog when opening an archived item        | [archived-item-confirmation-addon](./content-editor/archived-item-confirmation-addon/)                               |
+| Operation                                                     | Example                                                                                                              | Available |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------- |
+| Color picker field customization                              | [color-picker-field-addon](./content-editor/color-picker-field-addon/)                                               | 10.0      |
+| Date field customization                                      | [date-field-addon](./content-editor/date-field-addon/)                                                               | 10.0      |
+| Multiple overlapping extensions for the same field            | [field-priority-addon](./content-editor/field-priority-addon/)                                                       | 10.0      |
+| Customization of the RTF field using custom plugin            | [rtf-plugin-color-text-addon](./content-editor/rtf-plugin-color-text-addon/)                                         | 10.0      |
+| Customization of the RTF field using built-in plugin          | [rtf-plugin-wordcount-addon](./content-editor/rtf-plugin-wordcount-addon/)                                           | 10.0      |
+| Customization of the RTF field styles format dropdown options | [rtf-customize-format-styles-addon](./content-editor/rtf-customize-format-styles-addon/)                             | 10.0      |
+| Remove wrapping paragraph for single-line text in RTF content | [rtf-remove-single-line-wrapping-paragraph-addon](./content-editor/rtf-remove-single-line-wrapping-paragraph-addon/) | 10.0      |
+| Select with predefined list of colors                         | [color-select-addon](./content-editor/color-select-addon/)                                                           | 10.0      |
+| Select with options from 3rd party API                        | [external-data-select-addon](./content-editor/external-data-select-addon/)                                           | 10.0      |
+| Field with guide message                                      | [guided-field-addon](./content-editor/guided-field-addon/)                                                           | 10.0      |
+| Text field that shows how many symbols left                   | [limited-length-field-addon](./content-editor/limited-length-field-addon/)                                           | 10.0      |
+| Show confirmation dialog when opening an archived item        | [archived-item-confirmation-addon](./content-editor/archived-item-confirmation-addon/)                               | 10.1      |
+| Custom editor context accessible in form fields               | [custom-editor-context-for-field-addon](./content-editor/custom-editor-context-for-field-addon/)                     | 10.1      |
+| Multiselect field customization                               | [editor-multiselect-field-addon](./content-editor/editor-multiselect-field-addon/)                                   | 10.1.3    |
+| Tab in editor with all the items added to a bundle            | [bundle-items-tab-addon](./content-editor/bundle-items-tab-addon/)                                                   | 10.1.3    |
 
 ### Content Explorer
 
-| Operation                                                                              | Example                                                                                      |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| Simple action                                                                          | [simple-action-addon](./content-explorer/simple-action-addon/)                               |
-| Action which copies ids of selected Schema items                                       | [copy-schema-item-ids-action-addon](./content-explorer/copy-schema-item-ids-action-addon/)   |
-| Action with a mutation                                                                 | [action-with-mutation-addon](./content-explorer/action-with-mutation-addon/)                 |
-| Actions which manage Favorites                                                         | [actions-favorites-management-addon](./content-explorer/actions-favorites-management-addon/) |
-| Toolbar customization                                                                  | [customize-table-toolbar-addon](./content-explorer/customize-table-toolbar-addon/)           |
-| Context menu customization                                                             | [customize-table-context-menu-addon](./content-explorer/customize-table-context-menu-addon/) |
-| Column with a link to the other part of the application                                | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                 |
-| Column that renders custom data provided by data extenders                             | [published-to-column-addon](./content-explorer/published-to-column-addon/)                   |
-| Column that renders schema purpose value                                               | [schema-purpose-addon](./content-explorer/schema-purpose-addon/)                             |
-| Context menu customization                                                             | [customize-tree-context-menu-addon](./content-explorer/customize-tree-context-menu-addon/)   |
-| Panel that shows difference between 2 historical versions of the versioned active item | [history-diff-insights-panel-addon](./content-explorer/history-diff-insights-panel-addon/)   |
-| Insight panel that shows the list of bundles the active item is a part of              | [in-bundle-insights-panel-addon](./content-explorer/in-bundle-insights-panel-addon/)         |
-| Action with reusable Modal component, action to start new Workflow Task                | [xs-create-workflow-task-addon](./content-explorer/xs-create-workflow-task-addon/)           |
+| Operation                                                                              | Example                                                                                      | Available |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
+| Simple action                                                                          | [simple-action-addon](./content-explorer/simple-action-addon/)                               | 10.0      |
+| Action which copies ids of selected Schema items                                       | [copy-schema-item-ids-action-addon](./content-explorer/copy-schema-item-ids-action-addon/)   | 10.0.1    |
+| Action with a mutation                                                                 | [action-with-mutation-addon](./content-explorer/action-with-mutation-addon/)                 | 10.0      |
+| Actions which manage Favorites                                                         | [actions-favorites-management-addon](./content-explorer/actions-favorites-management-addon/) | 10.0.1    |
+| Toolbar customization                                                                  | [customize-table-toolbar-addon](./content-explorer/customize-table-toolbar-addon/)           | 10.0      |
+| Context menu customization                                                             | [customize-table-context-menu-addon](./content-explorer/customize-table-context-menu-addon/) | 10.0      |
+| Column with a link to the other part of the application                                | [linked-schema-column-addon](./content-explorer/linked-schema-column-addon/)                 | 10.0      |
+| Column that renders custom data provided by data extenders                             | [published-to-column-addon](./content-explorer/published-to-column-addon/)                   | 10.0      |
+| Column that renders schema purpose value                                               | [schema-purpose-addon](./content-explorer/schema-purpose-addon/)                             | 10.0      |
+| Context menu customization                                                             | [customize-tree-context-menu-addon](./content-explorer/customize-tree-context-menu-addon/)   | 10.0      |
+| Panel that shows difference between 2 historical versions of the versioned active item | [history-diff-insights-panel-addon](./content-explorer/history-diff-insights-panel-addon/)   | 10.0.1    |
+| Insight panel that shows the list of bundles the active item is a part of              | [in-bundle-insights-panel-addon](./content-explorer/in-bundle-insights-panel-addon/)         | 10.0.1    |
+| Action with reusable Modal component, action to start new Workflow Task                | [xs-create-workflow-task-addon](./content-explorer/xs-create-workflow-task-addon/)           | 10.1      |
 
 ### Activities Explorer
 
-| Operation                                               | Example                                                                                         |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Simple action                                           | [simple-action-addon](./activities-explorer/simple-action-addon/)                               |
-| Toolbar customization                                   | [customize-table-toolbar-addon](./activities-explorer/customize-table-toolbar-addon/)           |
-| Context menu customization                              | [customize-table-context-menu-addon](./activities-explorer/customize-table-context-menu-addon/) |
-| Column with a link to the other part of the application | [work-items-column-addon](./activities-explorer/work-items-column-addon/)                       |
+| Operation                                               | Example                                                                                         | Available |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------- |
+| Simple action                                           | [simple-action-addon](./activities-explorer/simple-action-addon/)                               | 10.0      |
+| Toolbar customization                                   | [customize-table-toolbar-addon](./activities-explorer/customize-table-toolbar-addon/)           | 10.0      |
+| Context menu customization                              | [customize-table-context-menu-addon](./activities-explorer/customize-table-context-menu-addon/) | 10.0      |
+| Column with a link to the other part of the application | [work-items-column-addon](./activities-explorer/work-items-column-addon/)                       | 10.0      |
 
 ### Access Control
 
-| Operation                                             | Example                                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Prevent folder publishing based on selected item type | [prevent-folder-publishing-addon](./access-control/prevent-folder-publishing-addon/) |
+| Operation                                             | Example                                                                              | Available |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------ | --------- |
+| Prevent folder publishing based on selected item type | [prevent-folder-publishing-addon](./access-control/prevent-folder-publishing-addon/) | 10.1.2    |
 
 ### Translations
 
@@ -292,7 +295,7 @@ export interface EditorHookResult {
       | Folder
       | Keyword
       | Page
-      | StructureGroup
+      | StructureGroup,
   ) => void;
 }
 
@@ -346,7 +349,7 @@ const { mutateAsync: unlocalizeItemMutation } = useUnlocalizeItemMutation();
 try {
   const unlocalizedItem = await unlocalizeItemMutation(
     { itemId, containerId },
-    { onSuccess }
+    { onSuccess },
   );
 } catch (error) {
   // error handling
@@ -358,7 +361,7 @@ const { mutateAsync: unlocalizeItemMutation } = useUnlocalizeItemMutation();
 try {
   const unlocalizedItem = await unlocalizeItemMutation(
     { itemId, containerItem },
-    { onSuccess }
+    { onSuccess },
   );
 } catch (error) {
   // error handling
