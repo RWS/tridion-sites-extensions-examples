@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
@@ -34,6 +34,9 @@ const validationErrorListStyles = {
     },
 } as const;
 
+const isPopulatedLink = (value: unknown): value is Link =>
+    value != null && typeof value === 'object' && 'IdRef' in value && (value as Link).IdRef != null;
+
 export const Field = memo(
     ({
         fieldDefinition,
@@ -51,6 +54,9 @@ export const Field = memo(
             setValues(defaultValue ? [defaultValue.getInternalModel()] : []);
         }, [defaultValue, setValues]);
 
+        // New multivalue fields may contain null placeholders (MinOccurs slots) until filled in.
+        const populatedValues = useMemo(() => (values ?? []).filter(isPopulatedLink), [values]);
+
         return (
             <Flex>
                 <Flex direction="row">
@@ -59,7 +65,7 @@ export const Field = memo(
                             id="multiselect-field"
                             open={false} // Disable the default dropdown, as we will use a custom item selector
                             multiple={true}
-                            value={values ?? []}
+                            value={populatedValues}
                             disabled={isDisabled || isReadOnly}
                             input={
                                 <OutlinedInput
@@ -83,9 +89,9 @@ export const Field = memo(
                             }
                             renderValue={selected => (
                                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                    {(selected ?? []).map(value => {
-                                        return <Chip key={value.IdRef} label={value.Title} />;
-                                    })}
+                                    {(selected ?? []).filter(isPopulatedLink).map(value => (
+                                        <Chip key={value.IdRef} label={value.Title ?? ''} />
+                                    ))}
                                 </Box>
                             )}
                             MenuProps={MenuProps}
