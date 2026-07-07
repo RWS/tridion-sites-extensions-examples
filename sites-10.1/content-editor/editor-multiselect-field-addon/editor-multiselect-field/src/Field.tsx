@@ -1,11 +1,11 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Select from '@mui/material/Select';
-import { Button, type ContentEditorMultivalueFormFieldExtensionProps, Flex } from '@tridion-sites/extensions';
+import { Button, type ContentEditorMultivalueFormFieldExtensionProps, Flex, getColorPalette, Text } from '@tridion-sites/extensions';
 import { MultimediaLinkFieldDefinition } from '@tridion-sites/models';
 import type { Link } from '@tridion-sites/open-api-client';
 
@@ -20,9 +20,27 @@ const MenuProps = {
     },
 };
 
+const validationErrorListStyles = {
+    margin: 0,
+    marginLeft: 1,
+    padding: 0,
+    paddingLeft: '16px',
+    '& li': {
+        margin: 0,
+        padding: 0,
+        '&::marker': {
+            color: getColorPalette().red100,
+        },
+    },
+} as const;
+
+const isPopulatedLink = (value: unknown): value is Link =>
+    value != null && typeof value === 'object' && 'IdRef' in value && (value as Link).IdRef != null;
+
 export const Field = memo(
     ({
         fieldDefinition,
+        fieldValidations,
         isDisabled,
         isReadOnly,
         setValues,
@@ -36,52 +54,68 @@ export const Field = memo(
             setValues(defaultValue ? [defaultValue.getInternalModel()] : []);
         }, [defaultValue, setValues]);
 
+        // New multivalue fields may contain null placeholders (MinOccurs slots) until filled in.
+        const populatedValues = useMemo(() => (values ?? []).filter(isPopulatedLink), [values]);
+
         return (
-            <Flex direction="row">
-                <FormControl sx={{ m: 1, width: 300, flexGrow: 1 }} disabled={isDisabled || isReadOnly}>
-                    <Select
-                        id="multiselect-field"
-                        open={false} // Disable the default dropdown, as we will use a custom item selector
-                        multiple={true}
-                        value={values ?? []}
-                        disabled={isDisabled || isReadOnly}
-                        input={
-                            <OutlinedInput
-                                id="select-multiple-chip"
-                                label={label}
-                                notched={false}
-                                sx={{
-                                    backgroundColor: '#fff',
-                                    '& .MuiOutlinedInput-notchedOutline': {
-                                        borderColor: '#758099',
-                                    },
-                                    '&:hover .MuiOutlinedInput-notchedOutline': {
-                                        borderColor: '#007373',
-                                        boxShadow: 'inset 0 0 0 1px #007373',
-                                    },
-                                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                        borderColor: '#758099',
-                                    },
-                                }}
-                            />
-                        }
-                        renderValue={selected => (
-                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                {(selected ?? []).map(value => {
-                                    return <Chip key={value.IdRef} label={value.Title} />;
-                                })}
-                            </Box>
-                        )}
-                        MenuProps={MenuProps}
-                    ></Select>
-                </FormControl>
-                {!isReadOnly && (
-                    <>
-                        <Button onClick={() => alert('Your Item selector opened')} label="Select" />
-                        <Flex marginLeft="xs">
-                            <Button onClick={onClear} label="Reset to default" />
-                        </Flex>
-                    </>
+            <Flex>
+                <Flex direction="row">
+                    <FormControl sx={{ m: 1, width: 300, flexGrow: 1 }} disabled={isDisabled || isReadOnly}>
+                        <Select
+                            id="multiselect-field"
+                            open={false} // Disable the default dropdown, as we will use a custom item selector
+                            multiple={true}
+                            value={populatedValues}
+                            disabled={isDisabled || isReadOnly}
+                            input={
+                                <OutlinedInput
+                                    id="select-multiple-chip"
+                                    label={label}
+                                    notched={false}
+                                    sx={{
+                                        backgroundColor: '#fff',
+                                        '& .MuiOutlinedInput-notchedOutline': {
+                                            borderColor: '#758099',
+                                        },
+                                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                                            borderColor: '#007373',
+                                            boxShadow: 'inset 0 0 0 1px #007373',
+                                        },
+                                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                                            borderColor: '#758099',
+                                        },
+                                    }}
+                                />
+                            }
+                            renderValue={selected => (
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                    {(selected ?? []).filter(isPopulatedLink).map(value => (
+                                        <Chip key={value.IdRef} label={value.Title ?? ''} />
+                                    ))}
+                                </Box>
+                            )}
+                            MenuProps={MenuProps}
+                        ></Select>
+                    </FormControl>
+                    {!isReadOnly && (
+                        <>
+                            <Button onClick={() => alert('Your Item selector opened')} label="Select" />
+                            <Flex marginLeft="xs">
+                                <Button onClick={onClear} label="Reset to default" />
+                            </Flex>
+                        </>
+                    )}
+                </Flex>
+                {fieldValidations?.errors && fieldValidations.errors.length > 0 && (
+                    <Flex marginTop="xs">
+                        <Box component="ul" sx={validationErrorListStyles}>
+                            {fieldValidations.errors.map(error => (
+                                <Box component="li" key={error}>
+                                    <Text color="red100">{error}</Text>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Flex>
                 )}
             </Flex>
         );
