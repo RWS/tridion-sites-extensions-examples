@@ -1,0 +1,19 @@
+{
+  "id": "customize-editor-toolbar-addon",
+  "name": "Customize editor toolbar Addon",
+  "author": "RWS",
+  "description": "Content Editor toolbar customization with a custom toolbar item",
+  "manifestVersion": "1.0.0",
+  "requireConfiguration": "optional",
+  "version": "1.0.0",
+  "extensions": [
+    {
+      "name": "editor-toolbar-customizations",
+      "type": "ExperienceSpaceExtension",
+      "properties": {
+        "main": "dist\\editor-toolbar-customizations\\main.js",
+        "files": ["dist\\editor-toolbar-customizations\\main.js"]
+      }
+    }
+  ]
+}

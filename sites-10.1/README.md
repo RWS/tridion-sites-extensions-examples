@@ -94,6 +94,7 @@ https://www.npmjs.com/package/@tridion-sites/extensions-cli
 | Custom editor context accessible in form fields               | [custom-editor-context-for-field-addon](./content-editor/custom-editor-context-for-field-addon/)                     | 10.1      |
 | Multiselect field customization                               | [editor-multiselect-field-addon](./content-editor/editor-multiselect-field-addon/)                                   | 10.1.3    |
 | Tab in editor with all the items added to a bundle            | [bundle-items-tab-addon](./content-editor/bundle-items-tab-addon/)                                                   | 10.1.3    |
+| Page publish readiness summary in editor toolbar            | [customize-editor-toolbar-addon](./content-editor/customize-editor-toolbar-addon/)                                   | 10.1.3    |
 
 ### Content Explorer
 
