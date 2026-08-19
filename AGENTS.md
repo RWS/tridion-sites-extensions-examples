@@ -6,16 +6,16 @@ This branch shares Cursor **project skills** so the team generates Tridion Sites
 
 | File | Purpose |
 |------|---------|
-| [`.cursor/skills/build-tridion-extension/SKILL.md`](.cursor/skills/build-tridion-extension/SKILL.md) | Agent playbook (`@build-tridion-extension`) |
-| [`.cursor/skills/build-tridion-extension/extension-catalog.md`](.cursor/skills/build-tridion-extension/extension-catalog.md) | Extension point → example mapping |
-| [`.cursor/skills/build-tridion-extension/config-guidelines.md`](.cursor/skills/build-tridion-extension/config-guidelines.md) | What to put in `{addonId}.config.json` |
-| [`.cursor/skills/build-tridion-extension/versioning-notes.md`](.cursor/skills/build-tridion-extension/versioning-notes.md) | Sites version → npm package pins |
+| [`.cursor/skills/build-tridion-sites-extension/SKILL.md`](.cursor/skills/build-tridion-sites-extension/SKILL.md) | Agent playbook (`@build-tridion-sites-extension`) |
+| [`.cursor/skills/build-tridion-sites-extension/extension-catalog.md`](.cursor/skills/build-tridion-sites-extension/extension-catalog.md) | Extension point → example mapping |
+| [`.cursor/skills/build-tridion-sites-extension/config-guidelines.md`](.cursor/skills/build-tridion-sites-extension/config-guidelines.md) | What to put in `{addonId}.config.json` |
+| [`.cursor/skills/build-tridion-sites-extension/versioning-notes.md`](.cursor/skills/build-tridion-sites-extension/versioning-notes.md) | Sites version → npm package pins |
 | [`.cursor/rules/tridion-extension.mdc`](.cursor/rules/tridion-extension.mdc) | Conventions when editing addon `src/` |
 
 ## In Cursor
 
 1. Check out this branch (or merge it into your working branch).
-2. Reference **`@build-tridion-extension`** or describe an extension intent.
+2. Reference **`@build-tridion-sites-extension`** or describe an extension intent.
 3. The agent should pick a base example from the catalog, copy/rename it, implement, then `lint` / `build` / `pack`.
 
 ## Non-negotiables

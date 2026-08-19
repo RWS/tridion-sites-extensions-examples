@@ -24,7 +24,7 @@ alwaysApply: false
 
 ## Dependencies
 
-- Match `peerDependencies` and `@tridion-sites/extensions-cli` versions from `.cursor/skills/build-tridion-extension/versioning-notes.md`
+- Match `peerDependencies` and `@tridion-sites/extensions-cli` versions from `.cursor/skills/build-tridion-sites-extension/versioning-notes.md`
 - Do not invent package versions — copy pins from the matching `sites-*` example
 
 ## Configuration-first

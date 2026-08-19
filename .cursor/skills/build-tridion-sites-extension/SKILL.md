@@ -1,5 +1,5 @@
 ---
-name: build-tridion-extension
+name: build-tridion-sites-extension
 description: >-
   Build validated Tridion Sites Experience Space extensions from natural language
   prompts. Use when the user wants to create, scaffold, validate, build, or pack
@@ -7,7 +7,7 @@ description: >-
   navigation items, or Tridion extension points.
 ---
 
-# Build Tridion Extension
+# Build Tridion Sites Extension
 
 End-to-end workflow for generating a **validated, built, and packed** addon zip from this repository’s examples. Follow this playbook so generated extensions stay aligned across the team.
 
