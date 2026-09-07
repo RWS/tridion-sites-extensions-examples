@@ -1,0 +1,52 @@
+---
+description: Conventions when editing Tridion Sites Experience Space extension source in this repo or generated output
+globs: "sites-*/**/*-addon/**/src/**"
+alwaysApply: false
+---
+
+# Tridion extension conventions
+
+## Module structure
+
+- Export `ExtensionModule` from `src/index.ts` with `initializeGlobals` + `initialize(builder)`
+- Register features in separate modules that receive `ExtensionBuilder`
+- Use `createExtensionGlobals()` pattern from examples
+
+## UI components
+
+- Match the UI patterns and dependencies from the scaffolded base example (typically `styled-components`)
+- Do not use `@tridion/graphene` in generated extensions — it is not publicly available
+
+## Manifest and build paths
+
+- Manifest `main` and `files` use Windows backslashes: `dist\\{extension-name}\\main.js`
+- Webpack output path must match `dist/{extension-name}`
+
+## Dependencies
+
+- Match `peerDependencies` and `@tridion-sites/extensions-cli` versions from `.cursor/skills/build-tridion-sites-extension/versioning-notes.md`
+- Do not invent package versions — copy pins from the matching `sites-*` example
+
+## Configuration-first
+
+- Externalize deployer-tunable values to `{addonId}.config.json`
+- Read via `getConfiguration<T>()` from `globals.ts`
+- Export typed config interface alongside registration code
+
+## Priority in config
+
+When `useFormField`, `useContentEditorView`, or equivalent hooks support `priority`:
+
+```typescript
+priority: config?.priority,  // never hardcode priority: 1
+```
+
+Include default in config file; document when omitted.
+
+## Translations
+
+- Add via `builder.translations.addTranslation`
+
+## What stays in code
+
+Extension contribution IDs, registration structure, React components, translation keys, and business logic — not environment-specific values.
